@@ -1,6 +1,6 @@
 # example of importing stuff in Python
-import matplotlib.pyplot as plt
-import numpy as np
+import matplotlib.pyplot as plt # matplotlib plotter
+import numpy as np              # access to numpy
 
 # Dictionaries map a key to a value. i.e. Foods['potato'] = 4 where
 # potato is the key and 4 is the value.
@@ -16,7 +16,8 @@ class entry:
         self.quantity = int(quantity)
         self.loc = loc
         self.tot_cost = self.price * self.quantity
-
+    def __repr__(self):
+        return 'entry({},{},{},{},{})'.format(self.food,self.price,self.quantity,self.loc,self.tot_cost)
 
 # Declaration of function: no return type needed :)
 def plot():
@@ -31,7 +32,12 @@ def plot():
 
     plt.show()
 
+
+# Passing in 'data' as a parameter
 def plot(data):
+    '''
+    You should try to plot something!
+    '''
     pass
 
 # This loads our data from our file
@@ -52,7 +58,6 @@ def load(filename):
                 Locs[array[3]] = 1
             else:
                 Locs[array[3]] += 1
-
 
             data.append(entry(array[0], # Food
                 array[1], # Price
